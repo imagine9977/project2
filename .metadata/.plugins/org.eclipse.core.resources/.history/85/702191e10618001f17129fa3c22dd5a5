@@ -1,0 +1,51 @@
+package com.coffee.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.coffee.dto.Sales;
+
+public class SalesDAO implements SalesMapper {
+
+	@Autowired
+	private SqlSession sqlSession;
+
+	@Override
+	public List<Sales> getSalesList() {
+		return sqlSession.selectList("Sales.getSalesList");
+	}
+
+	@Override
+	public Sales getSales(int bno) {
+		return sqlSession.selectOne("Sales.getSales", bno);
+	}
+
+	@Override
+	public void insSales(Sales sales) {
+		sqlSession.insert("Sales.insSales", sales);
+	}
+
+	@Override
+	public void upSales(Sales sales) {
+		sqlSession.update("Sales.upSales", sales);
+	}
+
+	@Override
+	public void delSales(int bno) {
+		sqlSession.delete("Sales.delSales", bno);
+	}
+
+	@Override
+	public int getTotalCount() {
+		return sqlSession.selectOne("Sales.getTotalCount");
+
+	}
+
+	@Override
+	public void vcntCount(int bno) {
+		sqlSession.update("Sales.vcntCount", bno);
+
+	}
+}

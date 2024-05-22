@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coffee.dao.FreeMapper">
+
+	<!-- -->
+	<sql id="FreeCol">
+		no, title, content, hits, resdate, member
+	</sql>
+	<select id="getFreeList" resultType="com.coffee.dto.Free">
+		select * from Free order
+		by resdate desc
+	</select>
+	<select id="getFree" resultType="com.coffee.dto.Free">
+		select * from Free where
+		no=#{no, javaType=int, jdbcType=INTEGER}
+	</select>
+	
+	<select id="vcntCount" resultType="int">
+		select no from (select * from
+		Free order by no desc) where rownum=1
+	</select>
+	<insert id="insFree" parameterType="com.coffee.dto.Free">
+		insert into Free values
+		(#{no}, #{title}, #{content}, #{hits}, default, #{author})
+	</insert>
+	
+	<update id="upFree">
+		update Free set title=#{title}, content= #{content}
+		where bno=#{bno}
+	</update>
+	
+	
+	<delete id="delFree">
+		delete from Free where bno=#{bno}
+	</delete>
+
+</mapper>

@@ -1,0 +1,13 @@
+package com.coffee.dto;
+
+public class free {
+	private int no;
+	private String title;
+	private String content;
+	private int lev;
+	private int parno;
+	private int hitsl
+	private String resdate;
+	private int id;
+	private String name;
+}

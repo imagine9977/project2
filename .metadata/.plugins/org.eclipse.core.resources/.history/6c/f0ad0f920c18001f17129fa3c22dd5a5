@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coffee.dao.FileboardMapper">
+
+	<!-- -->
+	<sql id="boardCol">
+		bno, title, content, author, vcnt, resdate
+	</sql>
+	<select id="getBoardList" resultType="com.coffee.dto.Board">
+		select * from board order
+		by resdate desc
+	</select>
+	<select id="getBoard" resultType="com.coffee.dto.Board">
+		select * from board where
+		bno=#{bno, javaType=int, jdbcType=INTEGER}
+	</select>
+	
+	<select id="vcntCount" resultType="int">
+		select bno from (select * from
+		board order by bno desc) where rownum=1
+	</select>
+	<insert id="insBoard" parameterType="com.coffee.dto.Board">
+		insert into board values
+		(#{bno}, #{title}, #{content}, #{author}, default, default)
+	</insert>
+	
+	<update id="upBoard">
+		update board set title=#{title}, content= #{content}
+		where bno=#{bno}
+	</update>
+	
+	
+	<delete id="delBoard">
+		delete from board where bno=#{bno}
+	</delete>
+
+</mapper>
