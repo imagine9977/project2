@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="com.coffee.dto.sales"/>
     <fullyQualifiedTypeName name="com.coffee.dto.board"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.Member"/>
 </qualifiedTypeNameHistroy>

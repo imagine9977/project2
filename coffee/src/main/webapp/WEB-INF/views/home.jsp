@@ -1,49 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html charset=UTF8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
-<c:set var="path2" value="${pageContext.request.contextPath }" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="path2" value="${pageContext.servletContext.contextPath }" />
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>메인 페이지</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAIN</title>
+    <jsp:include page="./include/header.jsp"></jsp:include>
 </head>
 <body>
-	<h2>${serverTime }</h2>
-	<h2>${author }</h2>
-	<h2>${company }</h2>
-	<p>${msg }</p>	
-	<hr>
-	<ul>
-		<li><a href="${path2 }/ajax/">AJAX 테스트</a></li>
-		<li><a href="${path2 }/ajax2/">AJAX2 테스트</a></li>
-		<li><a href="${path2 }/ajax3/">AJAX3 테스트</a></li>
-		<li><a href="${path2 }/check/">폼 검증 테스트</a></li>
-	</ul>
-	<hr>
-	<c:if test="${empty cus}">
-	<ul>
-		<li><a href="${path2 }/custom/login.do">로그인</a></li>
-		<li><a href="${path2 }/custom/agree.do">회원가입</a></li>
-	</ul>
-	</c:if>
-	<c:if test="${!empty cus}">
-	<ul>
-		<li><a href="${path2 }/custom/myInfo.do">마이페이지</a></li>
-		<li><a href="${path2 }/custom/myUpdate.do">회원정보수정</a></li>
-		<li><a href="${path2 }/custom/logout.do">로그아웃</a></li>
-	</ul>
-	</c:if>
-	<ul>
-		<li><a href="${path2 }/board/boardList.do">게시판 목록</a></li>
-	</ul>
-	<c:if test="${sid.equals('admin') }">
-	<ul>
-		<li><a href="${path2 }/admin/customList.do">회원목록</a></li>
-	</ul>
-	</c:if>	
+<div class="full-wrap">
+	<header id="hd" class="header">
+    	
+	</header>
+	<main class="contents" id="contents">
+		<section class="page clr-fix" id="page1">
+			<div class="page-wrap">
+				
+			</div>
+		</section>	
+	</main>
+	<footer id="ft">
+		<jsp:include page="./include/footer.jsp"></jsp:include>
+	</footer>
+</div>
 </body>
 </html>

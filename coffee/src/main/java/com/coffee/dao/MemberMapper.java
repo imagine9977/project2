@@ -5,11 +5,12 @@ import java.util.List;
 import com.coffee.dto.Member;
 
 public interface MemberMapper {
-	public int getTotalCount();
+	public int memberCount();
 	public List<Member> getMemberList();
-	public Member getMember(int bno);
+	public Member getMember(String id);
 	public void insMember(Member member);
-	public void upMember(Member member);
-	public void delMember(int bno);
-	public void vcntCount(int bno);
+	public void changePw(Member member);
+	public void changeInfo(Member member);
+	public void changePoint(Member member);
+	public void delMember(String id);
 }

@@ -17,23 +17,26 @@
 	<!-- DEBUG : 실행 내용에 대한 설명을 표시 -->
 	<!-- TRACE : 실행 내용이나 추적할 경로 등을 표시 -->
 	<!-- Application Loggers -->
-	<logger name="com.spring1.myapp">
+	<logger name="com.coffee.biz">
+		<level value="info" />
+	</logger>
+	<logger name="com.coffee.myapp">
 		<level value="info" />
 	</logger>
 	
-	<logger name="com.spring1.controller">
+	<logger name="com.coffee.controller">
 		<level value="info" />
 	</logger>
 	
-	<logger name="com.spring1.dao">
+	<logger name="com.coffee.dao">
 		<level value="info" />
 	</logger>
 
-	<logger name="com.spring1.dto">
+	<logger name="com.coffee.dto">
 		<level value="info" />
 	</logger>
 	
-	<logger name="com.spring1.service">
+	<logger name="com.coffee.util">
 		<level value="info" />
 	</logger>
 	

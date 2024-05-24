@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	private static final Logger log = LoggerFactory.getLogger(HomeController.class);
-	//localhost:8091/spring1/ => /WEB-INF/views/home.jsp
+	//localhost:8093/spring1/ => /WEB-INF/views/home.jsp
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		log.info("Welcome home~! The Client locale is {}.", locale);
@@ -26,8 +26,6 @@ public class HomeController {
 		String formatDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formatDate);
-		model.addAttribute("author", "김기태");
-		model.addAttribute("company", "파람소프트");
 		
 		return "home";
 	}

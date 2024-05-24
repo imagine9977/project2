@@ -8,7 +8,6 @@
 	<!--  기본 타입은 설정하지 않으며, 참조형이여한다-->
 	<typeAliases>
 		<!-- <package name="com.spring1" /> -->
-		<typeAlias type="com.spring1.dto.Apple" alias="Apple" />
-		<typeAlias type="Java.lang.Integer" alias="Integer" />
+		<package name="com.coffee"  />
 	</typeAliases>
 </configuration>
