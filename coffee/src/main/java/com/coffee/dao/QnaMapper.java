@@ -5,11 +5,12 @@ import java.util.List;
 import com.coffee.dto.Qna;
 
 public interface QnaMapper {
-	public int getTotalCount();
+	public List<Qna> getLastQnaList();
 	public List<Qna> getQnaList();
 	public Qna getQna(int bno);
-	public void insQna(Qna qna);
-	public void upQna(Qna qna);
-	public void delQna(int no);
-	public void vcntCount(int no);
+	public int insQues(Qna qna);
+	public int insAnsw(Qna qna);
+	public int editProQna(Qna qna);
+	public int delQues(int no);
+	public int delAnsw(int no);
 }

@@ -16,23 +16,31 @@ body {
 	z-index: 3;
 }
 
-nav {
-	position: absolute;
-	top: 15px;
+#first_line {
+	background: #cbcbcb;
+	height: 20px;
+	text-align: right; 
+	padding-right: 50px;  
+}
+
+#navHeader {
+	position: absolute; 
+	top: 45px;
 	left: 50%;
+	justify-content: center;
 	transform: translateX(-50%);
 	display: inline-block;
 	border: 2px solid #ebecf1;
 	border-radius: 30px;
 	animation: slide-in 1s ease-out;
-}
-
-ul {
+} 
+  
+ul { 
 	position: relative;
 	display: flex;
 	flex: 1 1 auto;
 	margin: 0;
-	padding: 0 30px;
+	padding: 0;
 	list-style-type: none! imporant;
 }
 
@@ -62,10 +70,10 @@ ul li ul {
 	display: block;
 	margin: 12px -12px;
 	padding: 0;
-	background: #ffa91b;
-	border: 2px solid #f7c833;
-	border-right: 2px solid #f89329;
-	border-bottom: 2px solid #f89329;
+	background: #cbcbcb;
+	border: 2px solid##262626;
+	border-right: 2px solid##262626;
+	border-bottom: 2px solid##262626;
 	border-radius: 5px;
 	transition: opacity 0.2s, visibility 0.2s;
 }
@@ -109,50 +117,68 @@ keyframes slide-in { 0% {
 40
 
 
+
+
 %
 {
 top
 
 
+
+
 :
 
 
+
+
 20px
+
+
 ;
-
-
 }
 70
 
 
+
+
 %
 {
 top
 
 
+
+
 :
 
 
+
+
 10px
+
+
 ;
-
-
 }
 100
 
 
+
+
 %
 {
 top
 
 
+
+
 :
 
 
+
+
 15px
+
+
 ;
-
-
 }
 }
 </style>
@@ -169,25 +195,35 @@ top
 			<a href="${hpath }/member/term.jsp"> 회원가입</a>
 		</c:if>
 	</div>
-	<nav>
-		<ul>
-			<li><a href="#0">메뉴</a></li>
-			<li><a href="#0">기업 소개</a></li>
-			<li><a href="#0">Clients</a>
-				<ul>
-					<li><a href="#0">Burger King</a></li>
-					<li><a href="#0">Southwest Airlines</a></li>
-					<li><a href="#0">Levi Strauss</a></li>
-				</ul></li>
-			<li><a href="#0">상점</a>
-				<ul>
-					<li><a href="#0">Print Design</a></li>
-					<li><a href="#0">Web Design</a></li>
-					<li><a href="#0">Mobile App Development</a></li>
-				</ul></li>
-			<li><a href="#0">연락처</a></li>
-		</ul>
-	</nav>
+	<div id="second_line">
+		<a href=""><img src="${hpath}/myapp/resources/images/favicon.ico"
+			style="margin-left: 50px; width: 100px; height: 100px;"></a>
+		<nav id="navHeader">
+			<ul>
+				<li><a href="#0">메뉴</a></li>
+				<li><a href="#0">기업 소개</a></li>
+				<li><a href="#0">Clients</a>
+					<ul>
+						<li><a href="#0">Burger King</a></li>
+						<li><a href="#0">Southwest Airlines</a></li>
+						<li><a href="#0">Levi Strauss</a></li>
+					</ul></li>
+				<li><a href="#0">상점</a>
+					<ul>
+						<li><a href="#0">Print Design</a></li>
+						<li><a href="#0">Web Design</a></li>
+						<li><a href="#0">Mobile App Development</a></li>
+					</ul></li>
+				<li><a href="#0">공지사항</a>
+					<ul>
+						<li><a href="${hpath }/GetQnaList">QNA</a></li>
+						<li><a href="#0">Web Design</a></li>
+						<li><a href="#0">Mobile App Development</a></li>
+					</ul></li>
+			</ul>
+		</nav>
+	</div>
+
 </body>
 
 </html>

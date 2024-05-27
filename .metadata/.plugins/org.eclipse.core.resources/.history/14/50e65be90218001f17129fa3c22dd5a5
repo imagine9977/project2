@@ -1,6 +1,0 @@
-package com.coffee.dto;
-
-public class FreeListVO {
-	private List<Free> list;
-	private PagingBean pagingBean;
-}

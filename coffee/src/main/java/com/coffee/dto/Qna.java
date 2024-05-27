@@ -12,13 +12,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Qna {
-
 	private int no;
+	private int plevel;
+	private int parno;
 	private String title;
 	private String content;
-	private int lev;
-	private int parno;
-	private int hits;
 	private String resdate;
-	private Member member;
+	private int visited;
+	private String aid;
 }

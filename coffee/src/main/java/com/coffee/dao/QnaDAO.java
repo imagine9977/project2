@@ -13,8 +13,7 @@ public class QnaDAO implements QnaMapper {
 
 	@Autowired
 	private SqlSession sqlSession;
-	
-	
+
 	@Override
 	public List<Qna> getQnaList() {
 		return sqlSession.selectList("Qna.getQnaList");
@@ -25,34 +24,37 @@ public class QnaDAO implements QnaMapper {
 		return sqlSession.selectOne("Qna.getQna", no);
 	}
 
-	
-
 	@Override
-	public void insQna(Qna qna) {
-		sqlSession.insert("Qna.insQna", qna);
+	public int insQues(Qna qna) {
+		return sqlSession.insert("Qna.insQues", qna);
 	}
 
 	@Override
-	public void upQna(Qna qna) {
-		sqlSession.update("Qna.upQna", qna);
+	public int insAnsw(Qna qna) {
+		return sqlSession.insert("Qna.insAnsw", qna);
 	}
 
 	@Override
-	public void delQna(int no) {
-		sqlSession.delete("Qna.delQna", no);		
-	}
-
-
-	
-	@Override
-	public int getTotalCount() {
-		return sqlSession.selectOne("Qna.getTotalCount");
-
+	public int editProQna(Qna qna) {
+		return sqlSession.update("Qna.editProQna", qna);
 	}
 
 	@Override
-	public void vcntCount(int no) {
-		sqlSession.update("Qna.vcntCount", no);
-		
+	public int delQues(int no) {
+		return sqlSession.delete("Qna.delQues", no);
 	}
+
+	@Override
+	public int delAnsw(int no) {
+		return sqlSession.delete("Qna.delAnsw", no);
+	}
+
+
+
+	@Override
+	public List<Qna> getLastQnaList() {
+		return sqlSession.selectList("Qna.getLastQnaList");
+	}
+
+
 }
