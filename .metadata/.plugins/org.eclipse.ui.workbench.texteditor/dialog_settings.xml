@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Batis"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="morning"/>
+			<item value="jsp"/>
+			<item value="mor"/>
+			<item value="Board"/>
+			<item value="bno"/>
+			<item value="board"/>
+			<item value="Qna"/>
 			<item value="batis"/>
 			<item value="morning.domain"/>
 			<item value="spring1"/>
-			<item value="board"/>
-			<item value="bno"/>
 			<item value="pno"/>
 			<item value="Product"/>
 			<item value="Sales"/>
 			<item value="Member"/>
 			<item value="ileboard"/>
-			<item value="Board"/>
-			<item value="tom"/>
-			<item value="myapp"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Free"/>
+			<item value="no"/>
+			<item value="free"/>
+			<item value="Product"/>
+			<item value="qna"/>
 			<item value="coffee.dto"/>
 			<item value="coffee.dao"/>
 			<item value="coffee]"/>
-			<item value="Free"/>
 			<item value="basket"/>
 			<item value="coffee"/>
 			<item value="sno"/>
-			<item value="no"/>
 			<item value="Qna"/>
 			<item value="pno"/>
-			<item value="Product"/>
 			<item value="Inventory"/>
 			<item value="ree"/>
-			<item value="Fileboard"/>
-			<item value="Basket"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

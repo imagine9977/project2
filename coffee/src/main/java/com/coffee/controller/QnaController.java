@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.coffee.biz.BoardBiz;
+
 import com.coffee.biz.QnaBiz;
-import com.coffee.dto.Board;
+import com.coffee.dto.Qna;
 
 @Controller
 @RequestMapping("/qna/")
@@ -23,41 +23,51 @@ public class QnaController {
 	@RequestMapping("list.do")
 	public String getQnaList(Model model) {
 		model.addAttribute("list", qnaService.getQnaList());
-		return "board/list";
+		return "qna/qnaList";
 	}
 	
 	@RequestMapping("detail.do")
-	public String getBoard(@RequestParam("bno") int bno, Model model) {
-		model.addAttribute("board", boardService.getBoard(bno));
-		return "board/get";
+	public String getqna(@RequestParam("bno") int bno, Model model) {
+		model.addAttribute("qna", qnaService.getQna(bno));
+		return "qna/getQna";
 	}
 
-	@GetMapping("insert.do")
-	public String insBoard(Board board, Model model) {
-		return "board/insert";
+	@GetMapping("insertQues.do")
+	public String insqna(Qna qna, Model model) {
+		return "qna/qIns";
 	}
 	
-	@PostMapping("insertPro.do")
-	public String insBoardPro(Board board, Model model) {
-		boardService.insBoard(board);
+	@PostMapping("insertQuesPro.do")
+	public String insqnaPro(Qna qna, Model model) {
+		qnaService.insQues(qna);
 		return "redirect:list.do";
 	}
 
+	@GetMapping("insertAnsw.do")
+	public String insAnsw(Qna qna, Model model) {
+		return "qna/aIns";
+	}
+	
+	@PostMapping("insertAnswPro.do")
+	public String insqnaAnswPro(Qna qna, Model model) {
+		qnaService.insAnsw(qna);
+		return "redirect:list.do";
+	}
 	@GetMapping("update.do")
-	public String upBoard(@RequestParam("bno") int bno, Model model) {
-		model.addAttribute("board", boardService.getBoard(bno));
-		return "board/edit";
+	public String upqna(@RequestParam("bno") int bno, Model model) {
+		model.addAttribute("qna", qnaService.getQna(bno));
+		return "qna/editQna";
 	}
 	
 	@PostMapping("updatePro.do")
-	public String upBoardPro(@RequestAttribute("board") Board board, Model model) {
-		boardService.upBoard(board);
+	public String upqnaPro(@RequestAttribute("Qna") Qna qna, Model model) {
+		qnaService.editProQna(qna);
 		return "redirect:list.do";
 	}
 	
-	@RequestMapping("delBoard.do")
-	public String delBoard(@RequestParam("bno") int bno, Model model) {
-		boardService.delBoard(bno);
+	@RequestMapping("delqna.do")
+	public String delqna(@RequestParam("bno") int bno, Model model) {
+		qnaService.delQues(bno);
 		return "redirect:list.do";
 	}
 }

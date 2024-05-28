@@ -4,6 +4,15 @@
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="com.coffee.dto.sales"/>
     <fullyQualifiedTypeName name="com.coffee.dto.board"/>
+    <fullyQualifiedTypeName name="com.coffee.dao.QnaMapper"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.Qna"/>
+    <fullyQualifiedTypeName name="com.coffee.biz.FreeBiz"/>
+    <fullyQualifiedTypeName name="com.coffee.biz.MemberService"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.Free"/>
+    <fullyQualifiedTypeName name="com.coffee.biz.ProductBiz"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.coffee.dao.ProductMapper"/>
     <fullyQualifiedTypeName name="com.coffee.dto.Member"/>
+    <fullyQualifiedTypeName name="com.coffee.biz.MemberBiz"/>
 </qualifiedTypeNameHistroy>

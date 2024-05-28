@@ -2,14 +2,17 @@ package com.coffee.biz;
 
 import java.util.List;
 
-import com.coffee.dto.Board;
 
-public class QnaBiz {
-	public int getTotalCount();
-	public List<Board> getBoardList();
-	public Board getBoard(int bno);
-	public void insBoard(Board board);
-	public void upBoard(Board board);
-	public void vcntCount(int bno);
-	public void delBoard(int bno);
+import com.coffee.dto.Qna;
+
+public interface QnaBiz {
+	public List<Qna> getLastQnaList();
+	public List<Qna> getQnaList();
+	public Qna getQna(int bno);
+	public int insQues(Qna qna);
+	public int insAnsw(Qna qna);
+	public int editProQna(Qna qna);
+	public int delQues(int no);
+	public int delAnsw(int no);
+
 }

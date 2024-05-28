@@ -25,16 +25,15 @@ public class ProductDAO implements ProductMapper {
 		return sqlSession.selectOne("Product.getProduct", pno);
 	}
 
-	
-
 	@Override
 	public void insProduct(Product product) {
-		sqlSession.insert("Product.insProduct", product);
+		// TODO Auto-generated method stub
+		sqlSession.insert("Product,.insProduct", product);
 	}
 
 	@Override
-	public void upProduct(Product product) {
-		sqlSession.update("Product.upProduct", product);
+	public void updProduct(Product product) {
+		sqlSession.update("Product.upProduct", product);		
 	}
 
 	@Override
@@ -42,17 +41,11 @@ public class ProductDAO implements ProductMapper {
 		sqlSession.delete("Product.delProduct", pno);		
 	}
 
-
-	
 	@Override
 	public int getTotalCount() {
+		// TODO Auto-generated method stub
 		return sqlSession.selectOne("Product.getTotalCount");
-
 	}
+	
 
-	@Override
-	public void vcntCount(int pno) {
-		sqlSession.update("Product.vcntCount", pno);
-		
-	}
 }

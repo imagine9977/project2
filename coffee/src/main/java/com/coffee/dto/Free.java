@@ -2,12 +2,8 @@ package com.coffee.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,5 +13,6 @@ public class Free {
 	private String content;
 	private int hits;
 	private String resdate;
-	private Member member;
+	private String id;
+	private String name;
 }
