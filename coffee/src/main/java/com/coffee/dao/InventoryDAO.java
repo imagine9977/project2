@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.coffee.dto.CategoryVO;
 import com.coffee.dto.Inventory;
 
 @Repository
@@ -14,45 +15,39 @@ public class InventoryDAO implements InventoryMapper {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	
+	@Override
+	public int getTotalCount() {
+		return sqlSession.selectOne("inventory.getTotalCount");
+	}
+
 	@Override
 	public List<Inventory> getInventoryList() {
-		return sqlSession.selectList("Inventory.getInventoryList");
+		return sqlSession.selectList("inventory.getInventoryList");
+	}
+	
+	@Override
+	public List<CategoryVO> categoryLoading(String cate) {
+		return sqlSession.selectList("inventory.categoryLoading", cate);
 	}
 
 	@Override
-	public Inventory getInventory(int bno) {
-		return sqlSession.selectOne("Inventory.getInventory", bno);
+	public Inventory getInventory(int pno) {
+		return sqlSession.selectOne("inventory.getInventory", pno);
 	}
-
-	
 
 	@Override
 	public void insInventory(Inventory inventory) {
-		sqlSession.insert("Inventory.insInventory", inventory);
+		sqlSession.insert("inventory.insInventory", inventory);
 	}
 
 	@Override
 	public void upInventory(Inventory inventory) {
-		sqlSession.update("Inventory.upInventory", inventory);
+		sqlSession.update("inventory.upInventory", inventory);
 	}
 
 	@Override
-	public void delInventory(int bno) {
-		sqlSession.delete("Inventory.delInventory", bno);		
+	public void delInventory(int ino) {
+		sqlSession.delete("inventory.delInventory", ino);
 	}
 
-
-	
-	@Override
-	public int getTotalCount() {
-		return sqlSession.selectOne("Inventory.getTotalCount");
-
-	}
-
-	@Override
-	public void vcntCount(int bno) {
-		sqlSession.update("Inventory.vcntCount", bno);
-		
-	}
 }

@@ -13,6 +13,11 @@
     <fullyQualifiedTypeName name="com.coffee.biz.ProductBiz"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.coffee.dao.ProductMapper"/>
-    <fullyQualifiedTypeName name="com.coffee.dto.Member"/>
     <fullyQualifiedTypeName name="com.coffee.biz.MemberBiz"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.Fileboard"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.Inventory"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.ProductVO"/>
+    <fullyQualifiedTypeName name="com.coffee.util.PagingBean"/>
+    <fullyQualifiedTypeName name="com.coffee.dto.Member"/>
 </qualifiedTypeNameHistroy>

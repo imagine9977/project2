@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.coffee.biz.MemberBiz;
+import com.coffee.biz.MemberServiceImpl;
 import com.coffee.biz.MemberService;
 import com.coffee.dto.Member;
 
@@ -32,7 +32,7 @@ public class MemberController {
 	private static final Logger log = LoggerFactory.getLogger(MemberController.class);
 	
 	@Autowired
-	private MemberBiz memberService;
+	private MemberService memberService;
 	
 	@Autowired
 	private BCryptPasswordEncoder pwdEncoder;
@@ -106,8 +106,6 @@ public class MemberController {
 			session.setAttribute("sid", id);
 			session.setAttribute("spw", pw);
 			session.setAttribute("sname", cus.getName());
-			session.setAttribute("smember", cus);
-			session.setAttribute("cus", cus);
 			model.addAttribute("msg", "로그인 성공");
 			return "redirect:/";
 		} else {

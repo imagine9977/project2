@@ -5,7 +5,7 @@
 <mapper namespace="member">
 
 	<select id="getMemberList" resultType="com.coffee.dto.Member">
-		select * from member order by resdate desc
+		select * from member order by regdate desc
 	</select>	
 	<select id="getMember" parameterType="String" resultType="com.coffee.dto.Member">
 		select * from member where id=#{id}

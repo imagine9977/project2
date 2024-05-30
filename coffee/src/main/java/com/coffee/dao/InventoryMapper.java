@@ -2,14 +2,15 @@ package com.coffee.dao;
 
 import java.util.List;
 
+import com.coffee.dto.CategoryVO;
 import com.coffee.dto.Inventory;
 
 public interface InventoryMapper {
-	public int getTotalCount();
-	public List<Inventory> getInventoryList();
-	public Inventory getInventory(int bno);
-	public void insInventory(Inventory inventory);
-	public void upInventory(Inventory inventory);
-	public void delInventory(int bno);
-	public void vcntCount(int bno);
+	int getTotalCount();
+	List<Inventory> getInventoryList();
+	List<CategoryVO> categoryLoading(String cate);
+	Inventory getInventory(int pno);
+	void insInventory(Inventory inventory);
+	void upInventory(Inventory inventory);
+	void delInventory(int ino);
 }

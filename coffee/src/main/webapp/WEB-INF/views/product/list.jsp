@@ -1,257 +1,174 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html charset=UTF8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="path2" value="${pageContext.servletContext.contextPath }" />
 <!DOCTYPE html>
-<html lang="UTF-8">
-
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>상점 안내</title>
-<link rel="stylesheet" href="${path0 }/css/common.css">
-<%@ include file="../include/head.jsp"%>
-<style>
-.breadcrumb {
-	list-style: none;
-	width: 920px;
-	padding: 15px;
-	margin: 0;
-	border-top: 2px solid #ececec;
-}
-
-.breadcrumb li {
-	display: inline;
-}
-
-.breadcrumb li:not (:last-child ):after {
-	content: "/";
-	margin: 0 5px;
-}
-
-.breadcrumb li a {
-	text-decoration: none;
-	color: #007bff;
-}
-
-.breadcrumb li a:hover {
-	text-decoration: underline;
-}
-
-#contents {
-	width: 100%;
-}
-
-.page {
-	clear: both;
-	width: 1200px;
-	min-height: 100vh;
-	margin: 0 auto;
-	margin-top: 20px;
-}
-
-.page::after {
-	content: "";
-	display: block;
-	width: 100%;
-	clear: both;
-}
-
-.page_title {
-	text-align: center;
-	padding-top: 2em;
-	padding-bottom: 0.5em;
-}
-
-#page1 {
-	min-height: calc(100vh - 150px);
-	margin-bottom: 10px;
-}
-
-#page_title1 {
-	text-align: center;
-	font-size: 32px;
-	font-weight: bold;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-}
-
-#side_bar {
-	width: 250px;
-	min-height: 100vh;
-	border: 2px solid #333;
-	float: left;
-	border: 1px solid #ececec;
-}
-
-#side_bar_title {
-	width: 100%;
-	height: 170px;
-	line-height: 170px;
-	text-align: center;
-	font-size: 32px;
-	font-weight: bold;
-	background-color: #afebff;
-}
-
-#side_bar li {
-	width: 240px;
-	height: 50px;
-	padding-left: 10px;
-	font-size: 16px;
-	line-height: 50px;
-	border-bottom: 2px solid #ececec;
-}
-
-#search {
-	width: 950px;
-	height: 100px;
-	text-align: center;
-	line-height: 100px;
-	background-color: #ccc
-}
-
-#search #inp1 {
-	width: 100px;
-	height: 40px;
-	padding-left: 10px;
-	font-size: 16px;
-	border-radius: 8px;
-	border-style: none;
-}
-
-#search #inp2 {
-	width: 500px;
-	height: 40px;
-	padding-left: 10px;
-	font-size: 16px;
-	border-radius: 8px;
-	border-style: none;
-}
-
-.tb_wrap {
-	width: 850px;
-	margin: 10px auto;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-	float: left;
-}
-
-.tb_wrap:after {
-	content: "";
-	display: block;
-	width: 100%;
-	clear: both;
-}
-
-.boxBuilding {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-}
-
-.itemBuilding {
-	width: 210px;
-	height: 210px;
-	border: 5px solid gray;
-	margin: 10px;
-	position: relative;
-}
-
-.img_text {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	visibility: hidden;
-	align-content: center;
-	justify-content: center;
-	text-align: center;
-	opacity: 0;
-	/* transition effect. not necessary */
-	transition: opacity .2s, visibility .2s;
-}
-
-.itemBuilding:hover .img_text {
-	visibility: visible;
-	opacity: 1;
-	-webkit-opacity: 1;
-}
-
-.itemBuilding:hover img {
-	webkit-filter: blur(4px); /* Chrome, Safari, Opera */
-	filter: blur(4px);
-}
-</style>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>상품 목록</title>
+	<jsp:include page="../include/head.jsp"></jsp:include>
+	<link rel="stylesheet" href="${path2 }/resources/css/pagination.css">
+	<style>
+	.list, .tab_box { width:1200px; margin:20px auto; }
+	</style>
 </head>
 <body>
-	<%@ include file="../include/header.jsp"%>
-
-	<main id="contents" class="clr-fix">
-		<section class="page" id="page1">
-			<nav id="side_bar">
-				<ul>
-					<h3 id="side_bar_title">메뉴 모음</h3>
-					<li><a href="traffic.jsp">원두</a></li>
-					<!-- 
-					<li><a href="building.jsp">공공기관 안내</a></li>
-					<li><a href="food.jsp">음식점 안내</a></li>
-					<li><a href="hotel.jsp">숙박시설 안내</a></li>
-					 -->
-				</ul>
+<div class="full-wrap">
+    <!-- 헤더 부분 인클루드 -->
+    <header id="hd">
+    	<div class="container">
+    		<jsp:include page="../include/header.jsp"></jsp:include>
+    	</div>
+    </header>
+    <main id="contents" class="contents">
+    	<div id="breadcrumb" class="container breadcrumb-wrap clr-fix" style="height:60px; line-height:60px;">
+	    	<nav class="breadcrumb" aria-label="breadcrumbs">
+			  <ul>
+			    <li><a href="${path2 }">Home</a></li>
+			    <li><a href="${path2 }/product/list.do">상품</a></li>
+			    <li class="is-active"><a href="#" aria-current="page">목록</a></li>
+			  </ul>
 			</nav>
-			<div class="tb_wrap">
-				<h2 class="page_title" id="page_title1">상점</h2>
-				<ol class="breadcrumb">
-					<li><a href="/myapp">Home</a></li>
-					<li><a href="#">상점</a></li>
-				</ol>
-				<div class="boxBuilding">
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/1f" alt="">
-						<p>원두1</p>
-
-					</div>
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/2f" alt="">
-						<p>원두1</p>
-
-					</div>
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/3f" alt="">
-						<p>원두1</p>
-
-					</div>
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/4f" alt="">
-						<p>원두1</p>
-
-					</div>
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/5f" alt="">
-						<p>원두1</p>
-
-					</div>
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/6f" alt="">
-						<p>원두1</p>
-
-					</div>
-					<div class="itemBuilding">
-						<img src="${ipath}/images/shop/7f" alt="">
-						<p>원두1</p>
-
-					</div>
+    	</div>
+ 	    <section class="page" id="page1">
+    		<h2 class="page-title">상품 목록</h2>
+    		
+    		<div class="tab_box">
+	    		<div class="tabs">
+				  <ul>
+                        <li><a href="${path2 }/product/listAll.do" class="navbar-item" title="전체">
+                            전체 상품
+                        </a></li>
+                        <li><a href="${path2 }/product/list.do?cate=note" class="navbar-item" title="노트">
+                            Note
+                        </a></li>
+                        <li><a href="${path2 }/product/list.do?cate=fancy" class="navbar-item" title="팬시">
+                            Fancy
+                        </a></li>
+                        <li><a href="${path2 }/product/list.do?cate=pen" class="navbar-item" title="필기류">
+                            Pen
+                        </a></li>
+                        <li><a href="${path2 }/product/list.do?cate=binder" class="navbar-item" title="바인더">
+                            Binder
+                        </a></li>
+                        <li><a href="${path2 }/product/list.do?cate=other" class="navbar-item" title="기타 및 집기류">
+                            Other
+                        </a></li>   
+				  </ul>
 				</div>
-
-			</div>
-
-
-		</section>
-
-	</main>
-
-	<%@include file="../include/footer.jsp"%>
+    		</div>
+    		
+    		<div class="page-wrap">
+	    		<div class="clr-fix">
+	    			<div class="control has-icons-left has-icons-right">
+    					<input type="search" id="search" class="input" placeholder="검색어 입력" style="display:inline-block;max-width:90%;">
+    					<button type="button" class="button" id="search-btn">검색</button>
+   					</div>
+					<div class="fixed-grid has-3-cols">
+						<ul class="grid" id="list1">
+							<c:if test="${not empty list }">
+								<c:forEach var="dto" items="${list }">
+								<li class="cell">
+									<a href="${path2 }/product/detail.do?pno=${dto.pno }" class="item_wrap">
+										<div class="item_box">
+											<img src="${path2 }/resources/upload/${dto.img3 }" class="item_pic"/>
+											<h4 class="list_cate">${dto.pno }</h4>
+											<h3 class="list_title">${dto.pname }</h3>
+											<p class="list_com">${dto.com }</p>
+											<p class="list_price"><strong class="red_txt">${dto.oprice }</strong></p>
+										</div>
+									</a>
+								</li>
+								</c:forEach>
+							</c:if>
+							<c:if test="${empty list }">
+								<li>
+									<p><strong>상품이 존재하지 않습니다.</strong></p>
+								</li>
+							</c:if>
+						</ul>
+						<div id="pagination-container"></div>
+					</div>
+					<hr>
+					<c:if test="${cus.id.equals('admin') }">
+					<div class="buttons">
+					  <a href="${path2 }/product/insert.do" class="button is-danger">상품 등록</a>
+	                  <a href="${path2}/product/insertInventory.do" class="button is-light">상품 입고</a>	                        
+					</div>
+					</c:if>
+					<script src="${path2 }/resources/js/jquery.pagination.js"></script>
+			        <script>
+			        $(document).ready(function() {
+			            var itemsPerPage = 5;
+			            var items = $('#product-list li');
+			            var numItems = items.length;
+			
+			            // 데이터 소스 설정
+			            var dataSource = function(done) {
+			                done(items.map(function() {
+			                    return $(this).text();
+			                }).get());
+			            };
+			
+			            // 페이지네이션 설정
+			            $('#pagination-container').pagination({
+			                dataSource: dataSource,
+			                pageSize: itemsPerPage,
+			                callback: function(data, pagination) {
+			                    var showFrom = (pagination.pageNumber - 1) * itemsPerPage;
+			                    var showTo = showFrom + itemsPerPage;
+			                    items.hide().slice(showFrom, showTo).show();
+			                }
+			            });
+			
+			            // 초기 표시 설정
+			            items.hide().slice(0, itemsPerPage).show();
+			
+			            // 검색 기능 구현
+			            $('#search-btn').on('click', function() {
+			                var searchTerm = $('#search').val().toLowerCase();
+			                var filteredItems = items.filter(function() {
+			                    var itemText = $(this).text().toLowerCase();
+			                    return itemText.indexOf(searchTerm) > -1;
+			                });
+			
+			                items.hide();
+			                filteredItems.show();
+			
+			                // 페이지네이션 업데이트
+			                $('#pagination-container').pagination({
+			                    dataSource: filteredItems.map(function() {
+			                        return $(this).text();
+			                    }).get(),
+			                    pageSize: itemsPerPage,
+			                    callback: function(data, pagination) {
+			                        var showFrom = (pagination.pageNumber - 1) * itemsPerPage;
+			                        var showTo = showFrom + itemsPerPage;
+			                        filteredItems.hide().slice(showFrom, showTo).show();
+			                    }
+			                });
+			
+			                $('#pagination-container').pagination('selectPage', 1);
+			            });
+			        });
+				    </script>
+				</div>
+    		</div>
+    	</section>
+    </main>
+    <!-- 푸터 부분 인클루드 -->
+    <footer id="ft">
+    	<jsp:include page="../include/footer.jsp"></jsp:include>
+    </footer>
+    <script>
+    $(document).ready(function(){
+    	$("#tb1_length, #tb1_filter").css("margin-bottom", "20px");
+    });
+    </script>
+</div>    
 </body>
-
 </html>
-

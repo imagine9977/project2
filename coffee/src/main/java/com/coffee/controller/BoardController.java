@@ -30,33 +30,4 @@ public class BoardController {
 		model.addAttribute("board", boardService.getBoard(bno));
 		return "board/get";
 	}
-
-	@GetMapping("insert.do")
-	public String insBoard(Board board, Model model) {
-		return "board/insert";
-	}
-	
-	@PostMapping("insertPro.do")
-	public String insBoardPro(Board board, Model model) {
-		boardService.insBoard(board);
-		return "redirect:list.do";
-	}
-
-	@GetMapping("update.do")
-	public String upBoard(@RequestParam("bno") int bno, Model model) {
-		model.addAttribute("board", boardService.getBoard(bno));
-		return "board/edit";
-	}
-	
-	@PostMapping("updatePro.do")
-	public String upBoardPro(@RequestAttribute("board") Board board, Model model) {
-		boardService.upBoard(board);
-		return "redirect:list.do";
-	}
-	
-	@RequestMapping("delBoard.do")
-	public String delBoard(@RequestParam("bno") int bno, Model model) {
-		boardService.delBoard(bno);
-		return "redirect:list.do";
-	}
 }

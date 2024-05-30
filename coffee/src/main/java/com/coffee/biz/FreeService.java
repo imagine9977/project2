@@ -4,52 +4,59 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.coffee.dao.FreeMapper;
 import com.coffee.dto.Free;
-
 
 @Service
 public class FreeService implements FreeBiz {
 
 	@Autowired
-	private FreeMapper FreeDAO;
+	private FreeMapper freeDAO;
+		
 	
 	@Override
 	public int getTotalCount() {
-		return FreeDAO.getTotalCount();
+		return freeDAO.getTotalCount();
 	}
 
 	@Override
 	public List<Free> getFreeList() {
-		return FreeDAO.getFreeList();
+		return freeDAO.getFreeList();
 	}
 
 	@Override
+	@Transactional
 	public Free getFree(int no) {
-		return FreeDAO.getFree(no);
+		freeDAO.hitCount(no);
+		return freeDAO.getFree(no);
+	}
+
+	@Override
+	public Free getNoCountFree(int no) {
+		return freeDAO.getFree(no);
 	}
 
 	@Override
 	public void insFree(Free free) {
-		FreeDAO.insFree(free);		
+		freeDAO.insFree(free);		
 	}
 
 	@Override
 	public void upFree(Free free) {
-		FreeDAO.upFree(free);
+		freeDAO.upFree(free);		
 	}
 
 	@Override
-	public void hitcount(int no) {
-		FreeDAO.hitCount(no);		
+	public void hitCount(int no) {
+		freeDAO.hitCount(no);		
 	}
 
 	@Override
 	public void delFree(int no) {
-		FreeDAO.delFree(no);
+		freeDAO.delFree(no);		
 	}
-
 
 	
 }

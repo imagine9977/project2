@@ -91,4 +91,8 @@ foreign key (pno) references product(pno);
 
 alter table basket add resdate timestamp default current_timestamp;
 
+
+insert into qna(plevel, parno, title, content, resdate, visited, aid) values(1,null,'더미제목','더미내용',default,0,'user1');
+
+
 SELECT VERSION();
