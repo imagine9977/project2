@@ -135,6 +135,9 @@ insert into sales values (default, 1, 2, 40000,
 '배송사', '배송기사연락처', '배송코드', 
 '배송상태', '거래상태', default);
 
+
+select * from sales;
+
 -- 배송지 변경
 update sales set addr='변경 주소', tel='전화번호' where sno=1;
 

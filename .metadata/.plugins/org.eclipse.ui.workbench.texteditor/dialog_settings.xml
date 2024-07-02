@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="#second_line"/>
+		<item key="selection" value="center"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value=".header"/>
-			<item value="morning.domain"/>
-			<item value="morning"/>
-			<item value="jsp"/>
-			<item value="mor"/>
-			<item value="Board"/>
-			<item value="bno"/>
+			<item value="center"/>
 			<item value="board"/>
-			<item value="Qna"/>
-			<item value="batis"/>
-			<item value="spring1"/>
-			<item value="pno"/>
-			<item value="Product"/>
-			<item value="Sales"/>
-			<item value="Member"/>
+			<item value="mv.addObject(&quot;errorMsg&quot;, &quot;게시글 상세조회에 실패했습니다.&quot;).setViewName(&quot;common/errorPage&quot;);"/>
+			<item value="member"/>
+			<item value="5.5.2"/>
+			<item value="myapp"/>
+			<item value="path1"/>
+			<item value="title"/>
+			<item value="block"/>
+			<item value="ㅠㅣㅐ차"/>
+			<item value="plevel"/>
+			<item value="no"/>
+			<item value=" no"/>
+			<item value="sid"/>
+			<item value="jqu"/>
 		</list>
 		<list key="replacehistory">
+			<item value="NOTICE"/>
+			<item value="select"/>
+			<item value="notice"/>
+			<item value="board"/>
+			<item value="5.3.36"/>
+			<item value="path0"/>
+			<item value="qtitle"/>
+			<item value="qlevel"/>
+			<item value="proj03"/>
 			<item value="#second_line"/>
 			<item value="coffee.dto"/>
 			<item value="Free"/>
 			<item value="no"/>
 			<item value="free"/>
 			<item value="Product"/>
-			<item value="qna"/>
-			<item value="coffee.dao"/>
-			<item value="coffee]"/>
-			<item value="basket"/>
-			<item value="coffee"/>
-			<item value="sno"/>
-			<item value="Qna"/>
-			<item value="pno"/>
-			<item value="Inventory"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="824"/>
+		<item key="DIALOG_X_ORIGIN" value="801"/>
 		<item key="DIALOG_Y_ORIGIN" value="8"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="1040"/>

@@ -39,7 +39,7 @@ alter table free add constraint fk_mem
 foreign key (id) references member(id);
 
 create table qna(no int auto_increment primary key, plevel int not null, parno int, title varchar(200), content varchar(2000),
-resdate datetime default current_timestamp ,visited int, aid varchar(20));
+resdate datetime defaul`PRIMARY`t current_timestamp ,visited int, aid varchar(20));
 
 alter table qna add constraint fk_mem0 
 foreign key (id) references member(id);

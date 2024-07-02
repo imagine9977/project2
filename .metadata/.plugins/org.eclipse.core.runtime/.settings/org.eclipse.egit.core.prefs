@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=D\:\\dbpark\\pro03\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;
+GitRepositoriesView.GitDirectories=D\:\\dbpark\\pro03\\.git;D\:\\dbpark\\proj3Test\\.git;D\:\\dbpark\\springPractice\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;D\:\\dbpark\\proj3Test\\.git;D\:\\dbpark\\springPractice\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
